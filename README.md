@@ -32,3 +32,34 @@ Validated expected services and identified potential areas for security improvem
 
 **Validation:**  
 Confirmed network visibility and service availability across multiple hosts.
+
+## 🔎 Packet Analysis (Wireshark)
+
+### 🔧 Incident — Detection of Unencrypted HTTP Traffic
+
+**Objective:**  
+Identify insecure web traffic within the network.
+
+**Detection:**  
+Applied Wireshark filter: tcp.port == 80
+
+
+**Investigation:**  
+- Captured network traffic using Wireshark  
+- Filtered for HTTP traffic on port 80  
+- Observed unencrypted web communication  
+
+**Findings:**  
+- Detected HTTP traffic transmitting data without encryption  
+- Confirmed absence of TLS/HTTPS  
+
+**Risk Insight:**  
+- Traffic is visible in plaintext  
+- Sensitive data could be intercepted  
+- Indicates insecure communication channels  
+
+**Resolution:**  
+Recommended enforcing HTTPS and disabling HTTP where possible.
+
+**Validation:**  
+Confirmed ability to identify insecure traffic using packet analysis.
